@@ -1,5 +1,6 @@
 # Beispieloperator für die Demo am 02.09.2022
-
+#
+#
 cd beispieleOperator
 
 ## Hier ist die Struktur des Projekts (wie zu sehen, handelt es sich um ein Go-Projekt): ##
