@@ -2,11 +2,9 @@
 #
 #
 ## in das Projekt gehen:
-#
 cd beispieleOperator
 #
 ## Hier ist die Struktur des Projekts (wie zu sehen, handelt es sich um ein Go-Projekt): ##
-#
 ll -a
 #
 ## main.go ist der Einstiegspunkt des Projekts; es richtet den Manager ein und führt ihn aus.
@@ -16,8 +14,8 @@ ll -a
 
 
 
-## api/v1 die unsere Foo CRD enthält  (siehe --> foo_types.go).
-## controllers die unseren Foo controller (siehe --> foo_controller.go).
+## api/v1 die unsere Foo CRD enthält  (siehe --> beispielOperator\api\v1\foo_types.go).
+## controllers die unseren Foo controller (siehe --> beispielOperator\controllers\foo_controller.go).
 #
 ## Das CRD Foo hat in seiner Spezifikation ein Namensfeld, das sich auf den Namen des Freundes bezieht, den Foo sucht. Wenn Foo einen Freund findet (einen Pod mit demselben Namen wie sein Freund), wird sein Glücksstatus auf true gesetzt.
 #
@@ -39,7 +37,7 @@ make run
 ## Um zu testen, ob alles richtig funktioniert, benutzen wir die zwei benutzerdefinierten Foo-Ressourcen und Pods, um zu sehen, wie sich der Controller verhält.
 #
 ## Führe den folgenden Befehl aus, um die Ressourcen in dem lokalen Kubernetes-Cluster zu erstellen:
-kubectl apply -f config/samples
+kubectl apply -f config/samples/tutorial_v1_foo.yaml
 #
 ## Zu sehen ist ein Controller mit zwei Abstimmungsschleifen für jedes Ereignis zur Erstellung einer benutzerdefinierten Foo-Ressource.
 #
@@ -47,6 +45,7 @@ kubectl apply -f config/samples
 kubectl describe foos
 #
 ## Nun setzen wir einen Pod mit dem Namen jack ein, um zu sehen, wie das System reagiert.
+kubectl apply -f config/samples/podjack.yaml
 #
 ## Danach sollten wir sehen, dass der Controller auf das Pod-Erstellungsereignis reagiert. Er aktualisiert dann den Status der ersten benutzerdefinierten Ressource Foo wie erwartet. Wir können dies selbst überprüfen, indem wir die benutzerdefinierten Ressourcen Foo beschreiben.
 #
