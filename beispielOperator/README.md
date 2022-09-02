@@ -4,7 +4,7 @@
 ## in das Projekt gehen:
 cd beispieleOperator
 #
-## Hier ist die Struktur des Projekts (wie zu sehen, handelt es sich um ein Go-Projekt): ##
+## Hier ist die Struktur des Projekts (wie zu sehen, handelt es sich um ein Go-Projekt):
 ll -a
 #
 ## main.go ist der Einstiegspunkt des Projekts; es richtet den Manager ein und führt ihn aus.
